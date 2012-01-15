@@ -87,9 +87,110 @@
 		
 		<blockquote>You may need to sudo this.</blockquote>
 		
-		<code>gem install vesper</code>
+		<code><span>~:</span> gem install vesper</code>
 		
 		<p>That's it! You're ready to start writing web apps with Vesper.</p>
+		
+		<h1>Basics</h1>
+		
+		<h2>Create an App</h2>
+		
+		<code>
+			<span>~:</span> vesper create app HelloWorld
+			<br />
+			<span>~:</span> cd HelloWorld
+			<br />
+			<span>~/HelloWorld:</span> rackup
+		</code>
+		
+		<p>View your new app at <a href="http://localhost:9292">http://localhost:9292</a>.</p>
+		
+		<hr />
+		
+		<p>So how does this work? At the core of every Vesper app is Sinatra, the Ruby DSL for quickly creating web applications with minimal effort.</p>
+		
+		<code>
+			<h5>application/hello_world.rb</h5>
+			<span>4:</span> get '/?' do
+			<br />
+			<span>5:</span> &nbsp; erb :hello_world
+			<br />
+			<span>6:</span> end
+		</code>
+		
+		<p>This will render views/hello_world.html at the root url of your app.</p>
+
+		<blockquote>Your application folder can be organized however you see fit. A single file, collection of libraries, or model & controller (and helper) subdirectories... it all just works.</blockquote>
+		
+		<p>Read more about <a href="http://sinartrarb.com/">Sinatra</a> to see what all it can do.</p>
+
+		<hr />
+		
+		<h2>Take a Look Around</h2>
+		
+		<dl>
+			<dt>.gitignore</dt>
+			<dd>Tell git which files to ignore. Learn more from <a href="http://book.git-scm.com/4_ignoring_files.html">The Git Community Book</a>.</dd>
+				
+			<dt>application/</dt>
+			<dd>Here's where you'll write the Ruby code for your app, including classes, routes and helpers. You can structure it as MVC, a collection of libraries, a single file, or any other way you see fit. Support for subdirectories is included.</dd>
+				
+			<dt>config/</dt>
+			<dd>Add any sitewide and/or environment settings here. Separate from plugins, which have their own configuration. Again, support for subdirectories is included.</dd>
+				
+			<dt>config.ru</dt>
+			<dd>Required by Rack servers to get things started.</dd>
+				
+			<dt>data/</dt>
+			<dd>Created by the DataMapper plugin, this is where your SQLite databases will be created, along with scripts for seeding and transmogrifying data.</dd>
+				
+			<dt>Gemfile</dt>
+			<dd>Used by Bundler, here's where you can specify which gems your app should use. It also handles loading gems required by plugins.</dd>
+				
+			<dt>Gemfile.lock</dt>
+			<dd>Created by Bundler from your Gemfile, this ensures exact versioning of the required gems. Be sure to check this into version control.</dd>
+				
+			<dt>plugins/</dt>
+			<dd>Plugins are shared, reusable, configurable mini apps that can be installed and modified to help with the legwork in creating your app. They can include their own application code, configuration, assets, tasks, hooks, and gems.</dd>
+				
+			<dt>public/</dt>
+			<dd>Stylesheets, images, JavaScripts, and error pages. This is the only directory accessible from a browser.</dd>
+				
+			<dt>Rakefile</dt>
+			<dd>Loads your app and your rake tasks from tasks/ into the command line.</dd>
+				
+			<dt>Readme.md</dt>
+			<dd>Use this to give other people instructions on how to run, modify or just read your code. It uses Markdown formatting by default to make sure it renders well on GitHub.</dd>
+				
+			<dt>tasks/</dt>
+			<dd>
+				Drop your own Rake tasks in here and they'll be loaded, along with your app, from the command line.
+				<blockquote><strong>Example:</strong> Loads the HelloWorld app into an IRB session.</blockquote>
+				<code><span>~/HelloWorld:</span> rake irb</code>
+			</dd>
+				
+			<dt>tests/</dt>
+			<dd>
+				Created by the MiniTest plugin, write your tests here and they'll be automatically loaded, along with your app, when you run the MiniTest command.
+				<code><span>~/HelloWorld:</span> rake minitest</code>
+			</dd>
+				
+			<dt>tmp/</dt>
+			<dd>
+				Temporary holding for uploaded files and downloaded plugins. Also includes restart.txt, which Rack can use to restart your app.
+				<code><span>~/HelloWorld:</span> touch tmp/restart.txt</code>
+			</dd>
+				
+			<dt>views/</dt>
+			<dd>
+				All your views should be created here. Ruby is embedded into .html and .erb files, layout.html is the default template, and subdirectories are supported.
+				<blockquote><strong>Pro Tip:</strong> Check out the Mobile Request Router plugin for easy mobile designs.</blockquote>
+			</dd>
+		</dl>
+		
+		<h1>Coming Soon</h1>
+		
+		<p>Videos and tutorials on the basics, plugins, deployment, and more. Stay tuned.</p>
 		
 		<hr />
 		
