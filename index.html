@@ -105,6 +105,8 @@
 		
 		<p>View your new app at <a href="http://localhost:9292">http://localhost:9292</a>.</p>
 		
+		<blockquote>Control-C will stop the server.</blockquote>
+		
 		<hr />
 		
 		<p>So how does this work? At the core of every Vesper app is Sinatra, the Ruby DSL for quickly creating web applications with minimal effort.</p>
@@ -188,10 +190,146 @@
 			</dd>
 		</dl>
 		
+		<h1>Plugins</h1>
+		
+		<h2>Plug and Play</h2>
+		
+		<p>Plugins are shared, reusable, configurable mini apps that can be installed and modified to help with the legwork in creating your app. They can include their own application code, configuration, assets, tasks, hooks, and gems.</p>
+		
+		<blockquote><strong>Pro Tip:</strong> Plugins usually come with readme files to help you understand more about what the plugin does, if there are any prerequisites, what can be configured or modified, and any other plugin-specific info.</blockquote>
+		
+		<blockquote><strong>Pro Tip:</strong> Many plugins come with their own config files. These are meant to be modified. Do so.</blockquote>
+		
+		<hr />
+		
+		<h2>Pre-installed Plugins</h2>
+		
+		<p>Vesper comes with a few plugins pre-installed to help get things moving.</p>
+		<ul>
+			<li><a href="https://github.com/vesper/core-extensions.vpi">Core Extensions</a></li>
+			<li><a href="https://github.com/jarrodtaylor/data-mapper.vpi">DataMapper</a></li>
+			<li><a href="https://github.com/jarrodtaylor/hot-reloader.vpi">Hot Reloader</a></li>
+			<li><a href="https://github.com/jarrodtaylor/mini-test.vpi">MiniTest</a></li>		
+			<li><a href="https://github.com/jarrodtaylor/pony-emailer.vpi">Pony Emailer</a></li>
+		</ul>
+		
+		<hr />
+		
+		<h2>Installing & Removing Plugins</h2>
+		
+		<p>To install a plugin, tell Vesper where to find it's git repo.</p>
+		
+		<code><span>~/HelloWorld:</span> vesper plugin install git@github.com:jarrodtaylor/logger.vpi.git</code>
+		
+		<p>Now your plugin should be working as soon as you restart your app. Don't forget to read through any config and readme files.</p>
+		
+		<p>If you decide you'd rather not use a plugin, removal is just as easy.</p>
+		
+		<code><span>~/HelloWorld:</span> vesper plugin remove logger.vpi</code>
+		
+		<h3>More Plugins</h3>
+		
+		<ul>
+			<li><a href="https://github.com/jarrodtaylor/logger.vpi">Logger</a></li>
+			<li><a href="https://github.com/jarrodtaylor/markdown-parser.vpi">Markdown Parser</a></li>
+			<li><a href="https://github.com/jarrodtaylor/mobile-request-router.vpi">Mobile Request Router</a></li>
+			<li><a href="https://github.com/jarrodtaylor/whenever-cron-scheduler.vpi">Whenever Cron Scheduler</a></li>
+		</ul>
+		
+		<hr />
+		
+		<h2>Creating Plugins</h2>
+		
+		<p>Anything you can do in an app, you can do with a plugin. Think of them as miniature apps. Start by creating an empty plugin.</p>
+		
+		<code><span>~/HelloWorld:</span> vesper plugin create my-great-plugin.vpi</code>
+		
+		<p>You should now have the following files and foldders to fill up with your code:</p>
+		
+		<blockquote>Not all plugins require all the default files and folders. You can delete anything you aren't using.</blockquote>
+		
+		<dl>
+			<dt>/application</dt>
+			<dd>Just like a full Vesper app, this where your plugin will do most of it's work. Classes, routes, subdirectories... they all go here.</dd>
+			<dt>/assets</dt>
+			<dd>If your plugin has any resources that need to be installed in the main app directory, put them here. The install plugin command will move them for you.</dd>
+			<dt>/config</dt>
+			<dd>Because plugins are more generalized than full Vesper apps, they often require some configuration. You can set that up here.</dd>
+			<dt>/tasks</dt>
+			<dd>Rake tasks in this folder will be loaded along with the rest of the main app's tasks.</dd>
+			<dt>Gemfile</dt>
+			<dd>Add any required gems here and Vesper will load them into the main app as part of the bundle command.</dd>
+			<dt>Readme.md</dt>
+			<dd>Use this to tell others what your plugin does, what needs to be configured and anything else they need to know.</dd>
+		</dl>
+				
+		<p>Last, initalize your plugin folder as a git repo and upload it to a server. The repo link will be used to install your new plugin</p>
+		
+		<hr />
+				
+		<h2>Create an App Without Plugins</h2>
+		
+		<p>You can generate a new Vesper app with only the Core Extensions plugin by adding the -core option:</p>
+		
+		<code><span>~:</span> vesper create app HelloWorld -core</code>
+		
+		<hr />
+		
+		<h2>Plugin Recipes</h2>
+		
+		<p>Recipes let you create new Vesper apps with a custom set of plugins.</p>
+		
+		<p>In your user or home directory, create a file called .vesper.rb with an array of your desired plugins.</p>
+		
+		<blockquote>Don't forget the . in front of the filename - it is a hidden file.</blockquote>
+		
+		<code>
+			<h5>~/.vesper.rb</h5>
+			<span>&nbsp;1:</span> @recipes = {
+			<br />
+			<span>&nbsp;2:</span>  &nbsp; :dm_test => [
+			<br />
+			<span>&nbsp;3:</span>  &nbsp; &nbsp;&nbsp;'git@github.com:jarrodtaylor/data-mapper.vpi.git',
+			<br />
+			<span>&nbsp;4:</span>  &nbsp; &nbsp;&nbsp;'git@github.com:jarrodtaylor/mini-test.vpi.git'
+			<br />
+			<span>&nbsp;5:</span>  &nbsp; ],
+			<br />
+			<span>&nbsp;6:</span>  &nbsp; :mobile_markdown => [
+			<br />
+			<span>&nbsp;7:</span>  &nbsp; &nbsp;&nbsp;'git@github.com:jarrodtaylor/markdown-parser.vpi.git',
+			<br />
+			<span>&nbsp;8:</span>  &nbsp; &nbsp;&nbsp;'git@github.com:jarrodtaylor/mobile-request-router.vpi.git',
+			<br />
+			<span>&nbsp;9:</span>  &nbsp; &nbsp;&nbsp;'git@github.com:jarrodtaylor/logger.vpi.git'
+			<br />
+			<span>10:</span>  &nbsp; ]
+			<br />
+			<span>11:</span> }
+		</code>
+		
+		<p>Now you can add the -recipe option when creating an app.</p>
+		
+		<code><span>~:</span> vesper create app HelloWorld -recipe mobile_markdown</code>
+		
 		<h1>Coming Soon</h1>
+		
+		<p>More detailed walkthroughs, more videos, deployment instructions, how it was made, and much more. Stay tuned.</p>
+		
+<!--
+		
+		<h1>Deployment</h1>
 		
 		<p>Videos and tutorials on the basics, plugins, deployment, and more. Stay tuned.</p>
 		
+		<h1>Behind the Scenes</h1>
+		
+		<p>In lieu of adding documentation of every line of code in the Vesper gem and framework, here's a video showing how it was made.</p>
+		
+		<blockquote>This is more of a hindsight video. There were many more twists and turns during the actual development. If you're really interested, you can see them on <a href="https://github.com/vesper/framework-gem/commits/master">GitHub</a>.</blockquote>
+
+-->
+
 		<hr />
 		
 		<p id="credits">
