@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Your Name Here...</title>
+	<style type="text/css" media="screen">
+	@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:400);
+	@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+		html {
+			background-attachment: fixed;
+			background-color: #f3f3f3;
+			background-image: url(http://vesperapps.com/img/stone.png);
+			border-top: 3px solid #121212;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			color: #121212;
+			font-family: 'Lato', sans-serif;
+			font-size: 16px;
+			line-height: 1.5em;
+			margin: auto;
+			padding: 33px 0 0 0;
+			width: 616px;
+			-webkit-text-size-adjust: none;
+		}
+
+		a, a:visited {
+			color: #27b1f5;
+			display: inline-block;
+			margin: 0 -3px;
+			padding: 0 3px;
+			text-decoration: underline;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		a img {
+			border: none;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Cabin Condensed', sans-serif;
+			font-weight: normal;
+		}
+
+		h2.meta {
+			color: silver;
+			font-size: 16px;
+			text-align: center;
+		}
+
+		h2#version {
+			float: right;
+		}
+
+		div#logo {
+			display: block;
+			margin: auto;
+			position: relative;
+			width: 309px;
+		}
+
+		div#logo code {
+			left: 86px;
+			position: absolute;
+			text-shadow: 0 1px 0 silver;
+			top: 140px;
+		}
+
+		div#menu {
+			margin: 33px auto;
+			text-align: center;
+			width: 309px;
+		}
+
+		div#menu p a {
+			background-color: #121212;
+			box-shadow: 0 0 3px #777;
+			color: white;
+			display: block;
+			font-family: 'Cabin Condensed', sans-serif;
+			margin: 11px 33px;
+			padding: 7px 11px;
+			text-decoration: none;
+		}
+
+		div#menu p a:hover {
+			box-shadow: 0 0 7px #27B1F5;
+			color: #27B1F5\9; /* IE hack */
+			text-shadow: 0 0 7px #27B1F5;
+		}
+
+		div#readme {
+			background-color: white;
+			border: 1px solid silver\9; /* IE hack */
+			border-top: 3px solid #121212;
+			box-shadow: 0 0 3px #777;
+			padding: 11px 33px 33px 33px;
+			width: 550px;
+		}
+
+		div#readme a:hover {
+			background-color: #121212;
+			color: white;
+			text-decoration: none;
+			text-shadow: 0 0 3px white;
+		}
+
+		div#readme h1 a:hover,
+		div#readme h2 a:hover,
+		div#readme h3 a:hover,
+		div#readme h4 a:hover,
+		div#readme h5 a:hover,
+		div#readme h6 a:hover {
+			text-shadow: none;
+		}
+
+		div#readme h1,
+		div#readme h2,
+		div#readme h3,
+		div#readme h4,
+		div#readme h5,
+		div#readme h6 {
+			color: #111;
+			text-shadow: 0 0 7px silver;
+		}
+
+		div#readme h1 {
+			background-color: lightyellow;
+			border: 1px solid silver\9; /* IE hack */
+			box-shadow: 0 0 3px #777;
+			color: #777;
+			display: inline-block;
+			font-size: 16px;
+			margin-bottom: 0.67em;
+			margin-left: -44px;
+			margin-top: 2.01em;
+			padding: 3px 33px;
+			padding-left: 44px;
+			width: 18%\9;
+		}
+
+		div#readme h2 {
+			font-size: 36px;
+			line-height: 100%;
+		} 
+
+		div#readme h3 {
+			font-size: 24px;
+		}
+
+		div#readme h4 {
+			font-size: 16px;
+			margin-top: 27px;
+			text-align: center;
+		}
+
+		div#readme hr {
+			border: none;
+			border-top: 1px solid #ededed;
+			border-top-color: #fefefe\9; /* IE hack */
+			margin: 33px 0;
+			margin: 11px 0\9;
+		}
+		div#readme blockquote {
+			border-left: 3px solid #ededed;
+			color: #777;
+			font-size: 90%;
+			margin-left: 11px;
+			padding-left: 11px;
+		}
+
+		div#readme blockquote.output {
+			font-family: monospace;
+			font-size: 11px;
+		}
+
+		div#readme code {
+			background-color: #121212;
+			color: white;
+			display: block;
+			font-size: 11px;
+			line-height: 1.5em;
+			margin: 1em 0;
+			padding: 7px 11px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+
+		div#readme h5 {
+			background-color: #333;
+			color: white;
+			font-family: "Lato", sans-serif;
+			font-size: 11px;
+			margin: -11px -11px 11px -11px;
+			padding: 3px 11px;
+			text-shadow: none;
+			-webkit-border-top-left-radius: 3px;
+			-webkit-border-top-right-radius: 3px;
+			-moz-border-radius-topleft: 3px;
+			-moz-border-radius-topright: 3px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+
+		div#readme code span { color: #777 }
+
+		div#readme dl dt { font-weight: bold; }
+
+		div#readme dl dd {
+			color: #777;
+			font-size: 90%;
+			line-height: 1.3em;
+			margin-bottom: 11px;
+			margin-left: 11px;
+			margin-top: 3px;
+		}
+		
+		div#readme p#credits {
+			color: silver;
+			font-size: 80%;
+			text-align: center;
+		}
+
+		div#readme p#credits a {
+			margin: 0 11px;
+		}
+		
+		
+	</style>
+</head>
+
+<body>
+
+	<h2 class="meta" id="version">v1.1.0</h2>
+	
+	<div id="logo">
+		<img src="img/vesper.png" />
+		<code>gem install vesper</code>
+	</div>	
+		
+	<div id="menu">
+		<p>
+			<a href="http://vesperapps.com">Documentation</a>
+			<a href="https://github.com/vesper/framework-gem">Source Code</a>
+		</p>
+	</div>
+	
+	<h2 class="meta">Welcome to Vesper.</h2>
+		
+	<div id="readme">
+		
+		<h4>Send any questions or comments to: <a href="mailto:jarrod@vesperapps.com">jarrod@vesperapps.com</a></h4>
+		
+		<hr />
+		
+		<dl>
+			<dt>.gitignore</dt>
+			<dd>Tell git which files to ignore. Learn more from <a href="http://book.git-scm.com/4_ignoring_files.html">The Git Community Book</a>.</dd>
+				
+			<dt>application/</dt>
+			<dd>Here's where you'll write the Ruby code for your app, including classes, routes and helpers. You can structure it as MVC, a collection of libraries, a single file, or any other way you see fit. Support for subdirectories is included.</dd>
+				
+			<dt>config/</dt>
+			<dd>Add any sitewide and/or environment settings here. Separate from plugins, which have their own configuration. Again, support for subdirectories is included.</dd>
+				
+			<dt>config.ru</dt>
+			<dd>Required by Rack servers to get things started.</dd>
+				
+			<dt>data/</dt>
+			<dd>Created by the DataMapper plugin, this is where your SQLite databases will be created, along with scripts for seeding and transmogrifying data.</dd>
+				
+			<dt>Gemfile</dt>
+			<dd>Used by Bundler, here's where you can specify which gems your app should use. It also handles loading gems required by plugins.</dd>
+				
+			<dt>Gemfile.lock</dt>
+			<dd>Created by Bundler from your Gemfile, this ensures exact versioning of the required gems. Be sure to check this into version control.</dd>
+				
+			<dt>plugins/</dt>
+			<dd>Plugins are shared, reusable, configurable mini apps that can be installed and modified to help with the legwork in creating your app. They can include their own application code, configuration, assets, tasks, hooks, and gems.</dd>
+				
+			<dt>public/</dt>
+			<dd>Stylesheets, images, JavaScripts, and error pages. This is the only directory accessible from a browser.</dd>
+				
+			<dt>Rakefile</dt>
+			<dd>Loads your app and your rake tasks from tasks/ into the command line.</dd>
+				
+			<dt>Readme.md</dt>
+			<dd>Use this to give other people instructions on how to run, modify or just read your code. It uses Markdown formatting by default to make sure it renders well on GitHub.</dd>
+				
+			<dt>tasks/</dt>
+			<dd>
+				Drop your own Rake tasks in here and they'll be loaded, along with your app, from the command line.
+				<blockquote><strong>Example:</strong> Loads the HelloWorld app into an IRB session.</blockquote>
+				<code><span>~/HelloWorld:</span> rake irb</code>
+			</dd>
+				
+			<dt>tests/</dt>
+			<dd>
+				Created by the MiniTest plugin, write your tests here and they'll be automatically loaded, along with your app, when you run the MiniTest command.
+				<code><span>~/HelloWorld:</span> rake minitest</code>
+			</dd>
+				
+			<dt>tmp/</dt>
+			<dd>
+				Temporary holding for uploaded files and downloaded plugins. Also includes restart.txt, which Rack can use to restart your app.
+				<code><span>~/HelloWorld:</span> touch tmp/restart.txt</code>
+			</dd>
+				
+			<dt>views/</dt>
+			<dd>
+				All your views should be created here. Ruby is embedded into .html and .erb files, layout.html is the default template, and subdirectories are supported.
+				<blockquote><strong>Pro Tip:</strong> Check out the Mobile Request Router plugin for easy mobile designs.</blockquote>
+			</dd>
+		</dl>
+		
+		<hr />
+		
+		<p id="credits">
+			Vesper was created by:
+			<br />
+			<a href="https://twitter.com/#!/jarrodtaylor">Jarrod Taylor</a>
+			<a href="https://twitter.com/#!/TheKarmakazie">Richard Rissanen</a>
+		</p>
+		
+	</div>
+	
+</body>
+
+</html>
