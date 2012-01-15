@@ -1,5 +1,5 @@
-jQuery(function() {
-	
+jQuery(document).ready(function($) {
+		
 	hideAddressBar();
 	
     $(window).bind('orientationchange', function () {

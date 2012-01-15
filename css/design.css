@@ -17,6 +17,7 @@ body {
 	line-height: 1.5em;
 	margin: auto;
 	padding: 33px 0 0 0;
+	position: relative;
 	width: 616px;
 	-webkit-text-size-adjust: none;
 }
@@ -77,7 +78,8 @@ div#arrow {
 }
 
 h2#version {
-	float: right;
+	position: absolute;
+	right: 11px;
 }
 
 div#logo {
@@ -144,6 +146,19 @@ div#readme {
 	box-shadow: 0 0 3px #777;
 	padding: 11px 33px 33px 33px;
 	width: 550px;
+}
+
+div#readme p#sneak-peak-container {
+	background-color: #121212;
+	box-shadow: 0 0 3px #777;
+	margin-left: -46px;
+	padding: 1px;
+	width: 637px;
+}
+
+div#readme p#sneak-peak-container iframe {
+	height: 478px;
+	width: 637px;
 }
 
 div#readme a:hover {
@@ -273,4 +288,39 @@ div#readme p#credits {
 
 div#readme p#credits a {
 	margin: 0 11px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 682px) {
+	body {
+		padding-left: 11px;
+		padding-right: 11px;
+		width: auto;
+	}
+	
+	div#readme {
+		padding: 11px 11px 33px 11px;
+		width: auto;
+	}
+	
+	div#readme p#sneak-peak-container {
+		margin: auto;
+		margin-left: -1px;
+		width: 438px;
+	}
+
+	div#readme p#sneak-peak-container iframe {
+		height: 327px;
+		width: 436px;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+	div#readme p#sneak-peak-container {
+		width: 278px;
+	}
+
+	div#readme p#sneak-peak-container iframe {
+		height: 207px;
+		width: 276px;
+	}
 }
