@@ -210,6 +210,61 @@ div#readme hr {
 	margin: 11px 0\9;
 }
 
+div#readme blockquote {
+	border-left: 3px solid #ededed;
+	color: #777;
+	font-size: 90%;
+	margin-left: 11px;
+	padding-left: 11px;
+}
+
+div#readme blockquote.output {
+	font-family: monospace;
+	font-size: 11px;
+}
+
+div#readme code {
+	background-color: #121212;
+	color: white;
+	display: block;
+	font-size: 11px;
+	line-height: 1.5em;
+	margin: 1em 0;
+	padding: 7px 11px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+div#readme h5 {
+	background-color: #333;
+	color: white;
+	font-family: "Lato", sans-serif;
+	font-size: 11px;
+	margin: -11px -11px 11px -11px;
+	padding: 3px 11px;
+	text-shadow: none;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+div#readme code span { color: #777 }
+
+div#readme dl dt { font-weight: bold; }
+
+div#readme dl dd {
+	color: #777;
+	font-size: 90%;
+	line-height: 1.3em;
+	margin-bottom: 11px;
+	margin-left: 11px;
+	margin-top: 3px;
+}
+
 div#readme p#credits {
 	color: silver;
 	font-size: 80%;
