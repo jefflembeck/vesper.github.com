@@ -99,7 +99,7 @@ div#logo code {
 div#menu {
 	margin: 33px auto;
 	text-align: center;
-	width: 309px;
+	width: 243px;
 }
 
 div#menu p a {
@@ -108,7 +108,7 @@ div#menu p a {
 	color: white;
 	display: block;
 	font-family: 'Cabin Condensed', sans-serif;
-	margin: 11px 33px;
+	margin: 11px 0;
 	padding: 7px 11px;
 	text-decoration: none;
 }
@@ -245,6 +245,7 @@ div#readme code {
 	font-size: 11px;
 	line-height: 1.5em;
 	margin: 1em 0;
+	overflow: hidden;
 	padding: 7px 11px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -257,7 +258,7 @@ div#readme h5 {
 	font-family: "Lato", sans-serif;
 	font-size: 11px;
 	margin: -11px -11px 11px -11px;
-	padding: 3px 11px;
+	padding: 7px 11px 3px 11px;
 	text-shadow: none;
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
